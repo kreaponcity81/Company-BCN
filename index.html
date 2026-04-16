@@ -131,8 +131,7 @@
   <div class="main" id="our project">
       <div class="card-slider swiper">
         <h1>Our-Project</h1>
-          <div class="slider-wrapper">
-              <div class="card-list swiper-wrapper">
+          <div class="swiper-wrapper">
                   <div class="card-item swiper-slide">
                       <img src="gambar/m4.jpg" alt="p1" 
                       class="card-image">
@@ -267,8 +266,7 @@
                           <p class="card-description">Pekerjaan Renovasi Ruang Kerja MTF Lantai 21 Graha Mandiri</p>
                           <a class="card-button" href="mtf.html">View</a>
                       </div>
-                  </div>
-              </div>
+                   </div>
           </div>
           <div class="swiper-pagination"></div>
         <div class="slider-button swiper-button-prev"></div>
@@ -562,7 +560,43 @@
      </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-    <script src="js/companibcn.js"></script>
+    <script>
+        const swiper = new Swiper('.card-slider', {
+        // Optional parameters
+        loop: true,
+        spaceBetween: 30,
+        grabCursor: true,
+
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            dynamicBullets: true,
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false
+        },
+
+            breakpoints: {
+            0: {
+            slidesPerView: 1,
+            },
+            768: {
+            slidesPerView: 2,
+            },
+            1080: {
+            slidesPerView: 3,
+            },
+        },
+        });
+    </script>
  
 </body>
 
