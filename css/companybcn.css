@@ -5,27 +5,95 @@
     font-family: 'poppins', sans-serif;
 }
 #nav-bar{
-    position: sticky;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    background: transparent;
+    z-index: 9999;
 } 
 .navbar-brand img {
     height: 50px;
     padding-left: 20px;
     background: transparent;
 }
-.navbar-nav li{
-    padding: 0 10px;
+.custom-toggler{
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent;
 }
-.navbar-nav li a{
-    color: #fff !important;
-    font-size: 600;
+.navbar-toggler:focus,
+.navbar-toggler:active{
+    outline: none !important;
+    box-shadow: none !important;
 }
-.navbar-nav li a:hover{
-    color: #ff9000 !important;
-    transition: 0.5s;
+
+.custom-toggler span{
+    position: relative;
+    display: block;
+    width: 28px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+}
+
+/* penting: ini biar pseudo element ikut stabil */
+.custom-toggler span::before,
+.custom-toggler span::after{
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    left: 0;
+}
+
+/* posisi */
+.custom-toggler span::before{ top: -8px; }
+.custom-toggler span::after{ top: 8px; }
+
+/* ACTIVE */
+.custom-toggler.active span{
+    background: transparent;
+}
+
+.custom-toggler.active span::before{
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.custom-toggler.active span::after{
+    transform: rotate(-45deg);
+    top: 0;
+}
+@media (max-width: 991px) {
+
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: auto;
+
+        width: 150px;   /* 👈 ini 1/4 layar */
+        background: rgba(108, 117, 125, 0.6);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+
+        padding: 10px 12px;
+
+        box-shadow: -5px 10px 25px rgba(0,0,0,0.25);
+    }
+
+    .navbar-nav{
+        width: 100%;
+    }
+
+    .navbar-nav li{
+        padding: 6px 0;
+    }
+
+    .navbar-nav li a{
+        text-align: center;
+        display: block;
+        padding-right: 5px;
+    }
 }
 
 /* carousel */
