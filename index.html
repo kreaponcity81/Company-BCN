@@ -16,9 +16,9 @@
         <a class="navbar-brand" href="#">
           <img src="gambar/GMBR_BCN.png" alt="">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon bg-secondary"></span>
+          <span></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
@@ -561,6 +561,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script>
+        const toggler = document.querySelector('.custom-toggler');
+          toggler.addEventListener('click', function () {
+            this.classList.toggle('active');
+          });
         const swiper = new Swiper('.card-slider', {
         // Optional parameters
         loop: true,
